@@ -6,6 +6,13 @@ export interface ITodo extends Document {
     completed: boolean;
 }
 
-const TodoSchema: Schema: new Schema(
-    
-)
+const TodoSchema: Schema = new Schema(
+    {
+        user: { type:mongoose.Types.ObjectId, ref:"User", required:true },
+        title: { type: String, require: true },
+        completed: { type: Boolean, default: false }
+    },
+    {timestamps: true},
+);
+
+export default mongoose.model<ITodo>("Todo", TodoSchema);
