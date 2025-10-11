@@ -14,3 +14,5 @@ export const errorMessage = (res:Response, message= "Something went wrong", code
         message,
     })
 }
+
+
